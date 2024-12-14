@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ict-algo", "ict-algo\ict-algo.csproj", "{579CD8B4-F5B2-48DB-97B0-67437DB57D73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ict-swing-points", "ict-swing-points\ict-swing-points.csproj", "{309D4BE7-625A-49CE-9010-14906DA9D478}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{579CD8B4-F5B2-48DB-97B0-67437DB57D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579CD8B4-F5B2-48DB-97B0-67437DB57D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579CD8B4-F5B2-48DB-97B0-67437DB57D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579CD8B4-F5B2-48DB-97B0-67437DB57D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{309D4BE7-625A-49CE-9010-14906DA9D478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{309D4BE7-625A-49CE-9010-14906DA9D478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{309D4BE7-625A-49CE-9010-14906DA9D478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{309D4BE7-625A-49CE-9010-14906DA9D478}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

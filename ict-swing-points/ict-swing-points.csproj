@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+<!-- IMPORTANT that you specify which type of algo the project is! -->
+<!-- If this is a trading bot -> <AlgoType>Robot</AlgoType> -->
+<!-- If this is an indicator -> <AlgoType>Indicator</AlgoType> -->
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>ict_algo</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AlgoPublish>false</AlgoPublish>
+    <AlgoType>Indicator</AlgoType> 
+  </PropertyGroup>
+
+  <ItemGroup>
+      <PackageReference Include="cAlgo.API" Version="1.0.0" />
+      <PackageReference Include="cTrader.Automate" Version="1.*-*" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="_BundleAlgo">
+    <PropertyGroup>
+      <!-- Set the default AlgoType if not specified -->
+      <AlgoType Condition="'$(AlgoType)' == ''">Robot</AlgoType>
+
+      <!-- Set AlgoCopyDestination based on AlgoType -->
+      <AlgoCopyDestination Condition="'$(AlgoType)' == 'Indicator'">$(USERPROFILE)\Documents\cAlgo\Sources\Indicators\$(ProjectName).algo</AlgoCopyDestination>
+      <AlgoCopyDestination Condition="'$(AlgoType)' == 'Robot'">$(USERPROFILE)\Documents\cAlgo\Sources\Robots\$(ProjectName).algo</AlgoCopyDestination>
+    </PropertyGroup>
+
+    <Message Text="AlgoType: $(AlgoType)" Importance="High" />
+    <Message Text="AlgoCopyDestination: $(AlgoCopyDestination)" Importance="High" />
+    <Exec Command="copy &quot;$(TargetDir)$(SolutionName).algo&quot; &quot;$(AlgoCopyDestination)&quot;"/>
+  </Target>
+</Project>
